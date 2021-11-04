@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <table class="table">
+            <tr>
+                <td><h1><p>Detalle Oferta {{oferta.id}}</p></h1></td>
+                <td><button type="button" (click)=this.goToOfertas() class="btn btn-dark">Listado Ofertas</button></td>
+            </tr>
+        </table> 
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="./../../../assets/images/oferta-trabajo.jpg" class="card-img-top imagenCard">
+          <div class="card-body">
+            <h5 class="card-title">{{oferta.titulo}}</h5>
+            <p class="card-text">Descripción: {{oferta.descripcion}} </p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Empresa: {{oferta.empresa}}</li>
+            <li class="list-group-item">Ciudad: {{oferta.ciudad}}</li>
+            <li class="list-group-item">Salario: {{oferta.salario}} €</li>
+            <li class="list-group-item"><a href="mailto:{{oferta.email}}">{{oferta.email}}</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>

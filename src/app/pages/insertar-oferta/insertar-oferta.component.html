@@ -1,0 +1,58 @@
+<div class="container divcenter">
+    <div class="row">
+        <div class="col">
+          <table class="table">
+              <tr>
+                  <td><h1><p>Insertar Oferta</p></h1></td>
+                  <td><button type="button" (click)=this.goToOfertas() class="btn btn-dark">Listado Ofertas</button></td>
+              </tr>
+          </table>        
+        </div>
+      </div>
+    <div class="row">
+      <div class="col">
+            <form #ofertaForm="ngForm" (ngSubmit)="onSubmit(ofertaForm)">
+                <div class="form-group">
+                <label for="exampleInputEmail1">Título *</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" #titulo [(ngModel)]="ofertaModel.titulo" required>
+                </div>
+                <div class="validateColor" *ngIf="this.validateTitulo">
+                    El título debe contener entre 5 y 100 caracteres.
+                </div>
+                <div class="form-group">
+                <label for="exampleInputPassword1">Descripción *</label>
+                <input type="text" class="form-control" id="descripcion" name="descripcion" #descripcion [(ngModel)]="ofertaModel.descripcion" required>
+                </div>
+                <div class="validateColor" *ngIf="this.validateDescripcion">
+                    <p>La descripción debe contener entre 5 y 300 caracteres. </p>
+                </div>
+                <div class="form-group">
+                <label for="exampleInputPassword1">Empresa *</label>
+                <input type="text" class="form-control" id="empresa" name="empresa" #empresa [(ngModel)]="ofertaModel.empresa" required>
+                </div>
+                <div class="validateColor" *ngIf="this.validateEmpresa">
+                    <p>La Empresa debe contener entre 5 y 50 caracteres. </p>
+                </div>
+                <div class="form-group">
+                <label for="exampleInputPassword1">Salario *</label>
+                <input type="text" class="form-control" id="salario" name="salario" #salario [(ngModel)]="ofertaModel.salario" required>
+                </div>
+                <div class="form-group">
+                <label for="exampleInputPassword1">Ciudad *</label>
+                <input type="text" class="form-control" id="ciudad" name="ciudad" #ciudad [(ngModel)]="ofertaModel.ciudad" required>
+                </div>
+                <div class="validateColor" *ngIf="this.validateCiudad">
+                    <p>La Ciudad debe contener entre 5 y 50 caracteres. {{this.longitudCiudad}}/50</p>
+                </div>
+                <div class="form-group">
+                <label for="exampleInputPassword1">Email *</label>
+                <input type="text" class="form-control" id="email" name="email" #email [(ngModel)]="ofertaModel.email" required>
+                </div>
+                <div class="validateColor" *ngIf="this.validateEmail">
+                    <p>El Email debe contener entre 5 y 50 caracteres. </p>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!ofertaForm.form.valid">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>

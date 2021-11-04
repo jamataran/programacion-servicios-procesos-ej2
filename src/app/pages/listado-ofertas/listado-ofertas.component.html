@@ -1,0 +1,37 @@
+<div class="container divcenter">
+    <div class="row">
+      <div class="col">
+        <table class="table">
+            <tr>
+                <td><h1><p>Listado Ofertas</p></h1></td>
+                <td>
+                  <button *ngIf="!this.administrador" type="button" (click)=this.goToLogin() class="btn btn-dark">Login</button>
+                  <button *ngIf="this.administrador" type="button" (click)=this.goToNuevaOferta() class="btn btn-dark">Nuevo Oferta</button>
+                </td>
+            </tr>
+        </table>        
+      </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Título</th>
+                    <th scope="col">Detalle</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of this.arrayOfertas">
+                    <td>{{item.titulo}}</td>
+                    <td><a class="btn btn-info" (click)=this.goToViewDetail(item.id)>Ver</a></td>
+                    <td *ngIf="this.administrador"><a class="btn btn-info" (click)=this.deleteItem(item.id)>Eliminar</a></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+  </div>
+  
+  
